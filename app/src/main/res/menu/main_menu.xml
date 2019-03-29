@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_location"
+        android:icon="@drawable/ic_action_location"
+        android:orderInCategory="100"
+        android:title="Pick your location"
+        app:showAsAction="always"
+        />
+
+<!--
+
+    <item
+        android:id="@+id/navigation_signout"
+        android:icon="@drawable/ic_exit_to_app_black_24dp"
+        android:orderInCategory="100"
+        android:title="Pick your location"
+        app:showAsAction="always" />
+-->
+
+</menu>

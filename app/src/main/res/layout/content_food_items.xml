@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:focusableInTouchMode="true"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".FoodItemsActivity"
+    tools:showIn="@layout/activity_food_items">
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/pullToRefresh_fooditems"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp">
+
+        <LinearLayout
+            android:id="@+id/layout_full"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/full_error"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="No Items for this restaurant"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/layout_veg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <ImageView
+                        android:id="@+id/type_image"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="3dp"
+                        android:layout_marginRight="3dp"
+                        android:src="@drawable/veg" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text=" Veg"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                        android:textColor="#000000" />
+
+                </LinearLayout>
+
+                <!--
+                    <TextView
+                        android:id="@+id/veg_error"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="No veg Items"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+        -->
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_veg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:nestedScrollingEnabled="true" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_egg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="3dp"
+                        android:layout_marginRight="3dp"
+                        android:src="@drawable/egg" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text=" EGG"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                        android:textColor="#000000" />
+
+                </LinearLayout>
+
+                <!--
+                    <TextView
+                        android:id="@+id/egg_error"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="No Egg Items"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+        -->
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_egg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:nestedScrollingEnabled="true" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_nonveg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="3dp"
+                        android:layout_marginRight="3dp"
+                        android:src="@drawable/nonveg" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text=" Non - Veg"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                        android:textColor="#000000" />
+
+                </LinearLayout>
+
+                <!--
+                     <TextView
+                         android:id="@+id/nonveg_error"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:text="No Non-Veg Items"
+                         android:layout_gravity="center"
+                         android:gravity="center"
+                         android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+        -->
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_nonveg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:nestedScrollingEnabled="true" />
+
+                <!--  <Button
+                        android:id="@+id/btn_go_to_cart"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/round"
+                        android:textColor="#ffffff"
+                        android:layout_margin="8dp"
+                        android:visibility="visible"
+                        android:text="Go To Cart" />
+        -->
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+</android.support.v4.widget.NestedScrollView>

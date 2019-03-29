@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "725348954659",
+    "firebase_url": "https://tinga-3580f.firebaseio.com",
+    "project_id": "tinga-3580f",
+    "storage_bucket": "tinga-3580f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:725348954659:android:3ca9d07c3d7a9329",
+        "android_client_info": {
+          "package_name": "com.sytiqhub.tinga"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "725348954659-0ec7pv6fkb2r7md29t5ndfl7t53qggpk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sytiqhub.tinga",
+            "certificate_hash": "80f5e293b5847dda87177ff095223bed9ec1cfbb"
+          }
+        },
+        {
+          "client_id": "725348954659-9a4i1irpjpoe76mtb2nug6ip492dvtto.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sytiqhub.tinga",
+            "certificate_hash": "f12dc6026e4bef053f3ae656f6f504f6462a5b7f"
+          }
+        },
+        {
+          "client_id": "725348954659-23lap9m0ntrv5h4m0jgpr7ddknivrniu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCS11KKuFLPkkPX96bLqZXYu5-6pOpe26M"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "725348954659-23lap9m0ntrv5h4m0jgpr7ddknivrniu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
