@@ -6,8 +6,8 @@ android {
         applicationId "com.sytiqhub.tinga"
         minSdkVersion 16
         targetSdkVersion 28
-        versionCode 3
-        versionName "1.0002"
+        versionCode 5
+        versionName "1.0004"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
@@ -37,7 +37,7 @@ dependencies {
 
     implementation 'com.firebaseui:firebase-ui-auth:4.1.0'
     //Auth
-    implementation 'com.facebook.android:facebook-android-sdk:4.39.0'
+    implementation 'com.facebook.android:facebook-android-sdk:4.40.0'
     implementation 'com.google.firebase:firebase-auth:16.2.0'
 
     implementation 'com.google.android.gms:play-services-auth:16.0.1'
@@ -50,13 +50,13 @@ dependencies {
 
     implementation 'com.squareup.picasso:picasso:2.71828'
 
-    implementation 'com.google.android.libraries.places:places:1.0.0'
+    implementation 'com.google.android.libraries.places:places:1.1.0'
 
     implementation 'com.nabinbhandari.android:permissions:3.8'
 
     implementation 'com.google.code.gson:gson:2.8.5'
    // implementation 'com.google.android.libraries.places:places-compat:1.0.0'
 
-
+    //implementation 'com.ernestoyaquello.stepperform:vertical-stepper-form:2.1.1'
 }
 apply plugin: 'com.google.gms.google-services'

@@ -46,9 +46,10 @@ public class MyOrdersAdapter extends RecyclerView.Adapter<MyOrdersAdapter.ViewHo
             holder.r_name.setText(mValues.get(position).getRestaurant_name());
             holder.r_address.setText(mValues.get(position).getRestaurant_address());
             holder.order_date.setText(mValues.get(position).getOrder_date());
-            holder.total_amount.setText(mValues.get(position).getTotal_price());
+            holder.total_amount.setText(mValues.get(position).getTotal_price()+"/-");
             holder.status.setText(mValues.get(position).getStatus());
 
+/*
             holder.mView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -59,6 +60,7 @@ public class MyOrdersAdapter extends RecyclerView.Adapter<MyOrdersAdapter.ViewHo
                     }
                 }
             });
+*/
 
 
         }

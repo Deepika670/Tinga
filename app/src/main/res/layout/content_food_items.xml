@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:fillViewport="true"
     android:focusableInTouchMode="true"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".FoodItemsActivity"
     tools:showIn="@layout/activity_food_items">
 

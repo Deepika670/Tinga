@@ -5,6 +5,7 @@ package com.sytiqhub.tinga;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -44,6 +45,7 @@ public class MyOrdersFragment extends Fragment {
     RecyclerView recycler;
     TextView txt;
     MyOrdersAdapter adapter;
+    SwipeRefreshLayout pullToRefresh;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -55,11 +57,28 @@ public class MyOrdersFragment extends Fragment {
         TingaManager tingaManager = new TingaManager();
 
         adapter = new MyOrdersAdapter(ITEMS,mListener);
-        String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
         recycler.setLayoutManager(new LinearLayoutManager(getActivity()));
+        pullToRefresh = (SwipeRefreshLayout) view.findViewById(R.id.pullToRefresh_myorder);
+        addContent(1);
 
-        tingaManager.getAllOrders(getActivity(), uid, new TingaManager.OrdersCallBack() {
+
+        pullToRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                addContent(2);
+            }
+        });
+
+        return view;
+    }
+
+    public void addContent(int i){
+
+        String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+        TingaManager tingaManager = new TingaManager();
+        tingaManager.getAllOrders(getActivity(), uid, i, new TingaManager.OrdersCallBack() {
             @Override
             public void onSuccess(List<OrderBean> detailsMovies) {
                 ITEMS = detailsMovies;
@@ -81,11 +100,11 @@ public class MyOrdersFragment extends Fragment {
                 Toast.makeText(getActivity(), "Failed retrieve data...", Toast.LENGTH_SHORT).show();
             }
         });
-
-
-
-        return view;
+        if (pullToRefresh.isRefreshing()) {
+            pullToRefresh.setRefreshing(false);
+        }
     }
+
 
     @Override
     public void onAttach(Context context) {

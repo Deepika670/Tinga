@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\2019\\Tinga\\Tinga\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v16\\values-v16.xml",
+            "outputFile": "F:\\Tinga\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v16\\values-v16.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Battula\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\166aa59e4220724db6d162c5a3522a57\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\8e89ec7e51c802e6d3b0e63d7360f2bb\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Battula\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\f79165a83a53bb5780566574f2ce31af\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\67469f9d9033a4364335d1465152b9b9\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

@@ -721,14 +721,16 @@ public class TingaManager {
     }
 
     private List<FoodBean> fbeans;
-    public void getFoodItems(final Activity activity, final String rid, final String keyword, final FoodCallBack onCallBack) {
+    public void getFoodItems(final Activity activity, final String rid, final String keyword, final int num, final FoodCallBack onCallBack) {
 
         fbeans = new ArrayList<>();
         String tag_string_req = "getFoodItems";
-        pDialog = new ProgressDialog(activity);
-        pDialog.setCancelable(true);
-        pDialog.setMessage("Getting Food Items, Please wait ...");
-        showDialog();
+        if(num == 1){
+            pDialog = new ProgressDialog(activity);
+            pDialog.setCancelable(true);
+            pDialog.setMessage("Getting Food Items, Please wait ...");
+            showDialog();
+        }
         response_log = new HashMap<>();
         prefs = new PreferenceManager(activity);
         StringRequest strReq = new StringRequest(Request.Method.POST,
@@ -738,8 +740,10 @@ public class TingaManager {
             public void onResponse(String response) {
 
                 Log.d(TAG, "Food Response: " + response);
-                hideDialog();
-                pDialog.dismiss();
+                if(num == 1){
+                    hideDialog();
+                    pDialog.dismiss();
+                }
                 try {
                     JSONObject jsonObj = new JSONObject(response);
 
@@ -781,7 +785,9 @@ public class TingaManager {
                             bean.setImage_path(image_path);
 
                             fbeans.add(bean);
-                            hideDialog();
+                            if(num == 1){
+                                hideDialog();
+                            }
                             Log.d("Items: ",fbeans.toString());
                             //prefs.createLoginSession(uid,login_id,"half");
 
@@ -798,7 +804,10 @@ public class TingaManager {
 
                 } catch (JSONException e) {
                     // JSON error
-                    hideDialog();
+                    if(num == 1){
+                        hideDialog();
+                     //   pDialog.dismiss();
+                    }
                     e.printStackTrace();
                     //Toast.makeText(activity, "Json error: " + e.getMessage(), Toast.LENGTH_LONG).show();
                     Log.e("Akhilllll onErrorResp:", "Exception: " + e.getMessage());
@@ -810,7 +819,10 @@ public class TingaManager {
             public void onErrorResponse(VolleyError error) {
                 Log.e("Akhilllll onErrorResp:", "Login Check Error: " + error.getMessage());
                 //Toast.makeText(activity,error.getMessage(), Toast.LENGTH_LONG).show();
-                hideDialog();
+                if(num == 1){
+                    hideDialog();
+                    pDialog.dismiss();
+                }
             }
         }) {
 
@@ -984,15 +996,17 @@ public class TingaManager {
     }
 
     private List<OrderBean> orderbean;
-    public void getAllOrders(final Activity activity, final String uid, final OrdersCallBack onCallBack) {
+    public void getAllOrders(final Activity activity, final String uid, final int num, final OrdersCallBack onCallBack) {
 
         orderbean = new ArrayList<>();
 
         String tag_string_req = "getorders";
-        pDialog = new ProgressDialog(activity);
-        pDialog.setCancelable(false);
-        pDialog.setMessage("Getting all orders, Please wait ...");
-        showDialog();
+        if(num==1){
+            pDialog = new ProgressDialog(activity);
+            pDialog.setCancelable(false);
+            pDialog.setMessage("Getting all orders, Please wait ...");
+            showDialog();
+        }
         response_log = new HashMap<>();
         prefs = new PreferenceManager(activity);
         StringRequest strReq = new StringRequest(Request.Method.POST,
@@ -1002,7 +1016,9 @@ public class TingaManager {
             public void onResponse(String response) {
 
                 Log.d(TAG, "orders Response: " + response);
-                hideDialog();
+                if(num==1){
+                    hideDialog();
+                }
 
                 try {
                     JSONObject jsonObj = new JSONObject(response);
@@ -1057,7 +1073,9 @@ public class TingaManager {
                 } catch (JSONException e) {
                     // JSON error
                     e.printStackTrace();
-                    hideDialog();
+                    if(num==1){
+                        hideDialog();
+                    }
                     //Toast.makeText(activity, "Json error: " + e.getMessage(), Toast.LENGTH_LONG).show();
                     Log.e("Akhilllll onErrorResp:", "Exception: " + e.getMessage());
                 }
@@ -1068,7 +1086,9 @@ public class TingaManager {
             public void onErrorResponse(VolleyError error) {
                 Log.e("Akhilllll onErrorResp:", "Login Check Error: " + error.getMessage());
                 //Toast.makeText(activity,error.getMessage(), Toast.LENGTH_LONG).show();
-                hideDialog();
+                if(num==1){
+                    hideDialog();
+                }
             }
         }) {
 

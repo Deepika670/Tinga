@@ -80,13 +80,14 @@ public class FoodItemsActivity extends AppCompatActivity implements OnListFragme
         nonveglayout = findViewById(R.id.layout_nonveg);
         egglayout = findViewById(R.id.layout_egg);
 
-        addContent();
+        db.reset();
+        addContent(1);
 
 
         pullToRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                addContent();
+                addContent(2);
             }
         });
 
@@ -96,11 +97,11 @@ public class FoodItemsActivity extends AppCompatActivity implements OnListFragme
 
     }
 
-    public void addContent(){
+    public void addContent(int i){
 
         TingaManager tingaManager = new TingaManager();
 
-        tingaManager.getFoodItems(FoodItemsActivity.this, r_id, "ALL", new TingaManager.FoodCallBack() {
+        tingaManager.getFoodItems(FoodItemsActivity.this, r_id, "ALL", i, new TingaManager.FoodCallBack() {
             @Override
             public void onSuccess(List<FoodBean> detailsMovies) {
 
@@ -234,6 +235,9 @@ public class FoodItemsActivity extends AppCompatActivity implements OnListFragme
             }
 
         });
+        if (pullToRefresh.isRefreshing()) {
+            pullToRefresh.setRefreshing(false);
+        }
 
     }
 
@@ -304,9 +308,4 @@ public class FoodItemsActivity extends AppCompatActivity implements OnListFragme
 
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        db.reset();
-    }
 }

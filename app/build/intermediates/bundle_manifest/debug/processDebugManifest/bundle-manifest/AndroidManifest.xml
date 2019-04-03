@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.sytiqhub.tinga"
-    android:versionCode="3"
-    android:versionName="1.0002" >
+    android:versionCode="5"
+    android:versionName="1.0004" >
 
     <uses-sdk
         android:minSdkVersion="16"
@@ -280,7 +280,10 @@
             android:name="com.google.firebase.provider.FirebaseInitProvider"
             android:authorities="com.sytiqhub.tinga.firebaseinitprovider"
             android:exported="false"
-            android:initOrder="100" />
+            android:initOrder="100" /> <!-- Needs to be explicitly declared on P+ -->
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
 
         <activity
             android:name="com.google.android.gms.common.api.GoogleApiActivity"

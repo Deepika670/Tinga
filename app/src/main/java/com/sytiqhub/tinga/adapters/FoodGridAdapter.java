@@ -119,7 +119,7 @@ public class FoodGridAdapter extends RecyclerView.Adapter<FoodGridAdapter.ViewHo
 
                         //prefs.setOrderFood(orderFoodBean);
                         db.addOrderFood(orderFoodBean);
-                        Toast.makeText(context, "Item added to cart...", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(context, "Item added to cart...", Toast.LENGTH_SHORT).show();
                         //Snackbar.make((findViewById(R.id.layout)),"Item added to cart...",Snackbar.LENGTH_SHORT).show();
 
                     }else{
@@ -153,7 +153,7 @@ public class FoodGridAdapter extends RecyclerView.Adapter<FoodGridAdapter.ViewHo
                 }
             });
 
-            holder.mView.setOnClickListener(new View.OnClickListener() {
+           /* holder.mView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     if (null != mListener) {
@@ -164,7 +164,7 @@ public class FoodGridAdapter extends RecyclerView.Adapter<FoodGridAdapter.ViewHo
                 }
             });
 
-
+*/
         }
 
     }
