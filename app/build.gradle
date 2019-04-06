@@ -6,8 +6,8 @@ android {
         applicationId "com.sytiqhub.tinga"
         minSdkVersion 16
         targetSdkVersion 28
-        versionCode 5
-        versionName "1.0004"
+        versionCode 6
+        versionName "1.0005"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
@@ -55,8 +55,8 @@ dependencies {
     implementation 'com.nabinbhandari.android:permissions:3.8'
 
     implementation 'com.google.code.gson:gson:2.8.5'
-   // implementation 'com.google.android.libraries.places:places-compat:1.0.0'
+    // implementation 'com.google.android.libraries.places:places-compat:1.0.0'
 
-    //implementation 'com.ernestoyaquello.stepperform:vertical-stepper-form:2.1.1'
+    implementation 'com.github.baoyachi:StepView:1.9'
 }
 apply plugin: 'com.google.gms.google-services'

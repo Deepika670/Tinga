@@ -22,7 +22,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.gson.Gson;
+import com.sytiqhub.tinga.activities.OrderStatusActivity;
 import com.sytiqhub.tinga.adapters.CartItemsAdapter;
 import com.sytiqhub.tinga.beans.OrderBean;
 import com.sytiqhub.tinga.beans.OrderFoodBean;
@@ -117,7 +120,7 @@ public class CartActivity extends AppCompatActivity{
                     String address = et_address.getText().toString();
                     radioButton = findViewById(selectedId);
 
-                    OrderBean orderBean = new OrderBean();
+                    final OrderBean orderBean = new OrderBean();
                     orderBean.setRestaurant_id(prefs.getRestaurantID());
                     orderBean.setRestaurant_name(prefs.getRestaurantName());
                     orderBean.setRestaurant_address(prefs.getRestaurantAddress());
@@ -139,11 +142,22 @@ public class CartActivity extends AppCompatActivity{
                         @Override
                         public void onSuccess(int orderid) {
                             Toast.makeText(CartActivity.this, "Order placed successfully", Toast.LENGTH_SHORT).show();
+
+                            DatabaseReference mdatabase = FirebaseDatabase.getInstance().getReference().child("Orders");
+                            mdatabase.child(String.valueOf(orderid)).child("orderid").setValue(orderid);
+                            mdatabase.child(String.valueOf(orderid)).child("status").setValue("Pending");
+                            mdatabase.child(String.valueOf(orderid)).child("restaurant").setValue("Pending");
+                            mdatabase.child(String.valueOf(orderid)).child("food_status").setValue("Pending");
+                            mdatabase.child(String.valueOf(orderid)).child("delivery").setValue("Pending");
+                            //mdatabase.child(String.valueOf(orderid)).child("status").setValue("Pending");
+
                             if(progressBar.isShowing()){
                                 progressBar.dismiss();
                             }
+
                             db.reset();
-                            Intent i = new Intent(CartActivity.this,HomeActivity.class);
+                            Intent i = new Intent(CartActivity.this, OrderStatusActivity.class);
+                            i.putExtra("order_id",orderid);
                             i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                             startActivity(i);
                             finish();

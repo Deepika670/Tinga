@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.facebook.Profile;
@@ -20,6 +21,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.sytiqhub.tinga.HomeActivity;
 import com.sytiqhub.tinga.R;
 import com.sytiqhub.tinga.beans.UserBean;
 import com.sytiqhub.tinga.manager.PreferenceManager;
@@ -36,7 +38,7 @@ public class ProfileFillActivity extends Activity {
     UserBean userBean;
     FirebaseAuth mAuth;
     PreferenceManager prefs;
-
+    ImageButton logout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,6 +58,7 @@ public class ProfileFillActivity extends Activity {
         b_continue = findViewById(R.id.btn_continue);
         //verify = findViewById(R.id.btn_verify);
 
+        logout = findViewById(R.id.profile_fill_logout);
         FirebaseUser user = mAuth.getCurrentUser();
 
 
@@ -125,7 +128,8 @@ public class ProfileFillActivity extends Activity {
              }
             }
         });*/
-        final String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+        final String emailPattern = "^[_A-Za-z0-9]+(\\.[_A-Za-z0-9]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+
         b_continue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -206,6 +210,17 @@ public class ProfileFillActivity extends Activity {
             }
             }
         });
+
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseUser user = mAuth.getCurrentUser();
+                Log.d("Provider List: ",user.getProviders().get(0));
+                String provider = user.getProviders().get(0);
+                tingaManager.Logout(ProfileFillActivity.this,prefs.getLoginID(),provider);
+            }
+        });
+
     }
 
     @Override

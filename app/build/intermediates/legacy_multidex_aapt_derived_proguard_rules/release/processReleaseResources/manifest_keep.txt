@@ -1,4 +1,0 @@
-# Referenced at F:\Tinga\app\build\intermediates\merged_manifests\release\AndroidManifest.xml:32
--keep class android.support.v4.app.CoreComponentFactory { <init>(); }
-# Referenced at F:\Tinga\app\build\intermediates\merged_manifests\release\AndroidManifest.xml:32
--keep class com.sytiqhub.tinga.AppController { <init>(); }

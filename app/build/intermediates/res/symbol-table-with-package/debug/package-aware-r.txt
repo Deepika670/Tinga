@@ -1169,6 +1169,8 @@ color switch_thumb_normal_material_dark
 color switch_thumb_normal_material_light
 color tooltip_background_dark
 color tooltip_background_light
+color uncompleted_color
+color uncompleted_text_color
 dimen abc_action_bar_content_inset_material
 dimen abc_action_bar_content_inset_with_nav
 dimen abc_action_bar_default_height_material
@@ -1523,6 +1525,7 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable attention
 drawable avd_hide_password
 drawable avd_show_password
 drawable background
@@ -1584,8 +1587,10 @@ drawable common_google_signin_btn_text_light
 drawable common_google_signin_btn_text_light_focused
 drawable common_google_signin_btn_text_light_normal
 drawable common_google_signin_btn_text_light_normal_background
+drawable complted
 drawable cursor
 drawable default_food
+drawable default_icon
 drawable design_bottom_navigation_item_background
 drawable design_fab_background
 drawable design_ic_visibility
@@ -1609,6 +1614,7 @@ drawable fui_idp_button_background_twitter
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable ic_action_add_green
+drawable ic_action_back_white
 drawable ic_action_cart_white
 drawable ic_action_home
 drawable ic_action_location
@@ -1622,6 +1628,7 @@ drawable ic_action_shopping_cart
 drawable ic_action_shopping_cart_add
 drawable ic_action_shopping_cart_white
 drawable ic_add_black_24dp
+drawable ic_chevron_left_white_32dp
 drawable ic_dashboard_black_24dp
 drawable ic_edit_black_24dp
 drawable ic_exit_to_app_black_24dp
@@ -1807,7 +1814,6 @@ id enterAlwaysCollapsed
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
-id fab
 id facebook_button
 id fill
 id fill_horizontal
@@ -1947,6 +1953,7 @@ id places_autocomplete_try_again
 id profile_button
 id profile_edit_profile
 id profile_email
+id profile_fill_logout
 id profile_fname
 id profile_lname
 id profile_location
@@ -1977,6 +1984,7 @@ id restaurant_picture
 id right
 id right_icon
 id right_side
+id rl_text_container
 id root
 id satellite
 id save_image_matrix
@@ -2025,6 +2033,7 @@ id standard
 id start
 id status
 id status_bar_latest_event_content
+id steps_indicator
 id stretch
 id submenuarrow
 id submit_area
@@ -2043,6 +2052,7 @@ id textView2
 id textView3
 id textView4
 id text_input_password_toggle
+id text_status
 id textinput_counter
 id textinput_error
 id textinput_helper_text
@@ -2141,6 +2151,7 @@ layout activity_home
 layout activity_home_acitivity
 layout activity_main
 layout activity_order_details
+layout activity_order_status
 layout activity_phone_auth
 layout activity_profile_fill
 layout activity_splash
@@ -2156,6 +2167,7 @@ layout content_food_description
 layout content_food_items
 layout content_home
 layout content_order_details
+layout content_order_status
 layout content_splash
 layout custom_dialog
 layout design_bottom_navigation_item
@@ -2236,6 +2248,8 @@ layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
+layout widget_horizontal_stepsview
+layout widget_vertical_stepsview
 menu main_menu
 menu menu_cart
 menu menu_food_description
@@ -2443,6 +2457,7 @@ string title_activity_home
 string title_activity_home_acitivity
 string title_activity_maps
 string title_activity_order_details
+string title_activity_order_status
 string title_activity_scrolling
 string title_activity_splash
 string title_dashboard

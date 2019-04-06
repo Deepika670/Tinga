@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.sytiqhub.tinga"
-    android:versionCode="5"
-    android:versionName="1.0004" >
+    android:versionCode="6"
+    android:versionName="1.0005" >
 
     <uses-sdk
         android:minSdkVersion="16"
@@ -40,6 +40,10 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.sytiqhub.tinga.activities.OrderStatusActivity"
+            android:label="@string/title_activity_order_status"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="com.sytiqhub.tinga.CartActivity"
             android:label="@string/title_activity_cart"
@@ -106,7 +110,6 @@
                 android:value=".MainActivity" />&ndash;&gt;
         </activity>
         -->
-
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_application_id" />

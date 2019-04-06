@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "F:\\Tinga\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-id\\values-id.xml",
+            "outputFile": "D:\\2019\\Tinga\\Tinga\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-id\\values-id.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-1\\files-1.1\\facebook-common-4.40.0.aar\\00aa4b0cdabfad635d149c6bbf7d3d4d\\res\\values-id\\values-id.xml",
+                    "source": "C:\\Users\\Battula\\.gradle\\caches\\transforms-1\\files-1.1\\facebook-common-4.40.0.aar\\597ee669ab0e5c62cc9aea2259b9135a\\res\\values-id\\values-id.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

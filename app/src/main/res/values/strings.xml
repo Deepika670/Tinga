@@ -111,6 +111,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_cart">Tinga Cart</string>
+    <string name="title_activity_order_status">Order Status</string>
 </resources>
 
 
