@@ -1,6 +1,7 @@
 package com.sytiqhub.tinga.activities;
 
 import android.os.Bundle;
+import android.os.Trace;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
@@ -21,6 +22,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.sytiqhub.tinga.R;
+import com.sytiqhub.tinga.beans.TrackingBean;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -69,36 +71,33 @@ public class OrderStatusActivity extends AppCompatActivity {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
 
-                if(dataSnapshot.child("delivery").getValue(String.class).equals("Accepted")){
-                    if(dataSnapshot.hasChild("delivery_name")){
-                       /* StepBean stepBean2 = new StepBean("Our Executive '"+dataSnapshot.child("delivery_name").toString()+"' is on the way to collect your order...",1);
-                        stepsBeanList.add(stepBean2);*/
-                        text.setText("Our Executive '"+dataSnapshot.child("delivery_name").getValue().toString()+"' is on the way to collect your order...");
+                TrackingBean bean = dataSnapshot.getValue(TrackingBean.class);
 
-                    }
-                }
+
             }
 
             @Override
             public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
 
-                if(dataSnapshot.child("restaurant").getValue(String.class).equals("Accepted")){
+                TrackingBean bean = dataSnapshot.getValue(TrackingBean.class);
+
+                if(bean.getRestaurant().equals("Accepted")){
                    /* StepBean stepBean1 = new StepBean("Order is accepted. Your Food is being prepared...",1);
                     stepsBeanList.add(stepBean1);*/
                     text.setText("1. Order is accepted. Your Food is being prepared...");
 
-                }else /*if(dataSnapshot.child("delivery").equals("Accepted")){
-                    StepBean stepBean2 = new StepBean("Our Executive is on the way to collect your order...",1);
-                    stepsBeanList.add(stepBean2);
-                }else */if(dataSnapshot.child("food_status").getValue(String.class).equals("Prepared")){
+                }else if(bean.getDelivery().equals("Accepted")){
+
+                    text.setText("Our Executive '"+bean.getDelivery_name()+"' is on the way to collect your order...");
+                }if(bean.getFood_status().equals("Prepared")){
                     /*StepBean stepBean2 = new StepBean("Your food is ready...",1);
                     stepsBeanList.add(stepBean2);*/
                     text.setText("1. Your food is ready...");
-                }else if(dataSnapshot.child("delivery").getValue(String.class).equals("Collected")){
+                }else if(bean.getDelivery().equals("Collected")){
                   /*  StepBean stepBean2 = new StepBean("Our Executive collected your order and is on the way to you...",1);
                     stepsBeanList.add(stepBean2);*/
                     text.setText("1. Our Executive collected your order and is on the way to you...");
-                }else if(dataSnapshot.child("status").getValue(String.class).equals("Delivered")){
+                }else if(bean.getStatus().equals("Delivered")){
                     /*StepBean stepBean2 = new StepBean("Your order is delivered...",1);
                     stepsBeanList.add(stepBean2);*/
                     text.setText("1. Your order is delivered...");

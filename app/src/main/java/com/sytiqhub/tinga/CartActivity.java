@@ -29,6 +29,7 @@ import com.sytiqhub.tinga.activities.OrderStatusActivity;
 import com.sytiqhub.tinga.adapters.CartItemsAdapter;
 import com.sytiqhub.tinga.beans.OrderBean;
 import com.sytiqhub.tinga.beans.OrderFoodBean;
+import com.sytiqhub.tinga.beans.TrackingBean;
 import com.sytiqhub.tinga.manager.DatabaseHandler;
 import com.sytiqhub.tinga.manager.PreferenceManager;
 import com.sytiqhub.tinga.manager.TingaManager;
@@ -140,27 +141,49 @@ public class CartActivity extends AppCompatActivity{
 
                     tinga.CheckItemStatusAndPlaceOrder(CartActivity.this, uid, orderBean, food_items, new TingaManager.PlaceOrderCallBack() {
                         @Override
-                        public void onSuccess(int orderid) {
-                            Toast.makeText(CartActivity.this, "Order placed successfully", Toast.LENGTH_SHORT).show();
+                        public void onSuccess(final int orderid) {
 
-                            DatabaseReference mdatabase = FirebaseDatabase.getInstance().getReference().child("Orders");
-                            mdatabase.child(String.valueOf(orderid)).child("orderid").setValue(orderid);
-                            mdatabase.child(String.valueOf(orderid)).child("status").setValue("Pending");
-                            mdatabase.child(String.valueOf(orderid)).child("restaurant").setValue("Pending");
-                            mdatabase.child(String.valueOf(orderid)).child("food_status").setValue("Pending");
-                            mdatabase.child(String.valueOf(orderid)).child("delivery").setValue("Pending");
-                            //mdatabase.child(String.valueOf(orderid)).child("status").setValue("Pending");
+                            /*DatabaseReference mdatabase = FirebaseDatabase.getInstance().getReference().child("Orders").child(String.valueOf(orderid));
 
-                            if(progressBar.isShowing()){
-                                progressBar.dismiss();
-                            }
+                            TrackingBean bean = new TrackingBean();
+                            bean.setOrderid(String.valueOf(orderid));
+                            bean.setDelivery("Pending");
+                            bean.setDelivery_name("None");
+                            bean.setFood_status("Pending");
+                            bean.setRestaurant("Pending");
+                            bean.setStatus("Pending");
 
-                            db.reset();
-                            Intent i = new Intent(CartActivity.this, OrderStatusActivity.class);
-                            i.putExtra("order_id",orderid);
-                            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                            startActivity(i);
-                            finish();
+                            mdatabase.setValue(bean);*/
+
+                            /*
+                            mdatabase.child("orderid").setValue(orderid);
+                            mdatabase.child("status").setValue("Pending");
+                            mdatabase.child("restaurant").setValue("Pending");
+                            mdatabase.child("food_status").setValue("Pending");
+                            mdatabase.child("delivery").setValue("Pending");
+                            mdatabase.child("delivery_name").setValue("None");
+
+*/
+
+                            final Handler handler = new Handler();
+                            handler.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    Toast.makeText(CartActivity.this, "Order placed successfully", Toast.LENGTH_SHORT).show();
+
+                                    if(progressBar.isShowing()){
+                                        progressBar.dismiss();
+                                    }
+
+                                    db.reset();
+
+                                    Intent i = new Intent(CartActivity.this, OrderStatusActivity.class);
+                                    i.putExtra("order_id",orderid);
+                                    i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                    startActivity(i);
+                                }
+                            }, 1500);
+
                         }
 
                         @Override

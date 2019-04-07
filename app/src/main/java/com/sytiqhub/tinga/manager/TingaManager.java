@@ -15,6 +15,8 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.gson.JsonArray;
 import com.sytiqhub.tinga.AppController;
 import com.sytiqhub.tinga.HomeActivity;
@@ -23,6 +25,7 @@ import com.sytiqhub.tinga.R;
 import com.sytiqhub.tinga.beans.FoodBean;
 import com.sytiqhub.tinga.beans.OrderBean;
 import com.sytiqhub.tinga.beans.RestaurantBean;
+import com.sytiqhub.tinga.beans.TrackingBean;
 import com.sytiqhub.tinga.beans.UserBean;
 
 import org.json.JSONArray;
@@ -1143,7 +1146,17 @@ public class TingaManager {
 
                             order_id = jObj.getInt("order_id");
                             String message = jObj.getString("message");
+                            DatabaseReference mdatabase = FirebaseDatabase.getInstance().getReference().child("Orders").child(String.valueOf(order_id));
 
+                            TrackingBean bean = new TrackingBean();
+                            bean.setOrderid(String.valueOf(order_id));
+                            bean.setDelivery("Pending");
+                            bean.setDelivery_name("None");
+                            bean.setFood_status("Pending");
+                            bean.setRestaurant("Pending");
+                            bean.setStatus("Pending");
+
+                            mdatabase.setValue(bean);
 
 
                         } else if (success_code == 0) {

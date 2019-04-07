@@ -11,6 +11,7 @@ import com.android.volley.toolbox.Volley;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.libraries.places.api.Places;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 
 import java.util.HashMap;
@@ -27,7 +28,7 @@ public class AppController extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-
+        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
         final FirebaseRemoteConfig firebaseRemoteConfig = FirebaseRemoteConfig.getInstance();
 
         mInstance = this;

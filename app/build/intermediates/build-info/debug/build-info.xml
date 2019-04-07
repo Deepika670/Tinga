@@ -2,70 +2,47 @@
 <instant-run
     abi="armeabi-v7a,armeabi"
     api-level="23"
-    build-mode="FULL"
+    build-mode="COLD"
     density="xhdpi"
     format="10"
+    ir-eligibility="COMPATIBLE"
     plugin-version="3.3.2"
-    timestamp="1554405301809"
+    timestamp="1554626428722"
     token="-7957872522161871360"
-    verifier="FULL_BUILD_REQUESTED" >
+    verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="60003" />
+        duration="34398" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="2523" />
+        duration="3135" />
     <task
         name="verifier"
-        duration="336" />
+        duration="2239" />
 
     <artifact
-        location="D:\2019\Tinga\Tinga\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
-        type="SPLIT" />
-    <artifact
-        location="D:\2019\Tinga\Tinga\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
-        type="SPLIT_MAIN" />
-    <artifact
-        location="D:\2019\Tinga\Tinga\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
+        location="D:\2019\Tinga\Tinga\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
         type="SPLIT" />
     <artifact
         location="D:\2019\Tinga\Tinga\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
         type="SPLIT" />
     <artifact
-        location="D:\2019\Tinga\Tinga\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
-        type="SPLIT" />
-    <artifact
-        location="D:\2019\Tinga\Tinga\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
-        type="SPLIT" />
-    <artifact
-        location="D:\2019\Tinga\Tinga\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
-        type="SPLIT" />
-    <artifact
-        location="D:\2019\Tinga\Tinga\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
-        type="SPLIT" />
-    <artifact
-        location="D:\2019\Tinga\Tinga\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
-        type="SPLIT" />
-    <artifact
-        location="D:\2019\Tinga\Tinga\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
-        type="SPLIT" />
-    <artifact
-        location="D:\2019\Tinga\Tinga\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
-        type="SPLIT" />
-    <artifact
-        location="D:\2019\Tinga\Tinga\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
-        type="SPLIT" />
+        location="D:\2019\Tinga\Tinga\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
+        type="SPLIT_MAIN" />
 
     <build
         build-mode="FULL"
-        timestamp="1554405301809"
+        timestamp="1554623416845"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="D:\2019\Tinga\Tinga\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
+            type="SPLIT" />
+        <artifact
+            location="D:\2019\Tinga\Tinga\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
             type="SPLIT" />
         <artifact
             location="D:\2019\Tinga\Tinga\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
@@ -95,11 +72,44 @@
             location="D:\2019\Tinga\Tinga\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
             type="SPLIT" />
         <artifact
-            location="D:\2019\Tinga\Tinga\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
-            type="SPLIT" />
-        <artifact
             location="D:\2019\Tinga\Tinga\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
             type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        ir-eligibility="FIELD_ADDED"
+        timestamp="1554624736468"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="D:\2019\Tinga\Tinga\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
+            type="SPLIT" />
+        <artifact
+            location="D:\2019\Tinga\Tinga\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
+            type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        ir-eligibility="CLASS_ADDED"
+        timestamp="1554625829042"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="D:\2019\Tinga\Tinga\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
+            type="SPLIT_MAIN" />
+    </build>
+    <build
+        build-mode="COLD"
+        ir-eligibility="COMPATIBLE"
+        timestamp="1554626428722"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="D:\2019\Tinga\Tinga\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
+            type="SPLIT" />
+        <artifact
+            location="D:\2019\Tinga\Tinga\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+            type="SPLIT" />
+        <artifact
+            location="D:\2019\Tinga\Tinga\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
+            type="SPLIT_MAIN" />
     </build>
 
 </instant-run>
